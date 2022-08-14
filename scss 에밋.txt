@@ -1,0 +1,16 @@
+환경 : php언어(닷홈), scss (css의 전처리) -> 컴파일 css -> 스타일 연결,
+        jquery 3버전, swiper, aos, 본고딕, 부트스트랩
+
+.wrap
+	공통레이아웃
+	  픽스된 상단 header.fixed-top#hd>.container>h1>a>img^^ul#gnb>li*3>a
+	  하단 footer#ft>.container.d-flex>h2>img^.ftinner>a.email+p.ftinfo+ul>li*2>a>img^^^p.copy
+	메인컨텐츠
+	  section#main_banner
+	  section#hada_swiper
+	  section#happy_thumb
+	  section#aboutus
+
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
