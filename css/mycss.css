@@ -15,10 +15,10 @@ ul, li {
   min-height: 600px;
 }
 
-.scrollPage {
+#gnb .scrollPage {
   position: relative;
 }
-.scrollPage:after {
+#gnb .scrollPage:after {
   content: "";
   position: absolute;
   height: 3px;
@@ -30,11 +30,12 @@ ul, li {
   transition: 0.5s;
   margin: 0 auto;
 }
-.scrollPage.on:after, .scrollPage:hover:after {
+#gnb .scrollPage.on:after, #gnb .scrollPage:hover:after {
   width: 100%;
 }
 
-a.scrollPage:hover {
+a.scrollPage:hover,
+a.scrollPage.on {
   color: #023a9b !important;
 }
 
