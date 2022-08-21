@@ -6,13 +6,15 @@ $(document).ready(function(){
         $('body, html').animate({
             scrollTop : $($(this).attr('href')).offset().top
             },400, 'linear', () => {
-                if( $(this).hasClass('navia')){ //navia 클래스 가지고 있다면
-                    $('#gnb .navia').removeClass('on') //모든 네비 스타일 빼라
-                    $(this).addClass('on') //지금 클릭한 이 부분만 스타일 넣어줘
-                }
+                // if( $(this).hasClass('navia')){ //navia 클래스 가지고 있다면
+                //     $('#gnb .navia').removeClass('on') //모든 네비 스타일 빼라
+                //     $(this).addClass('on') //지금 클릭한 이 부분만 스타일 넣어줘
+                // }
+                $('body').attr('data-p', $($(this).attr('href')).offset().top)
                 
         })
     }) ////  a.scrollPage click
+
 
     $('.section').each(function(){ //each 메서드는 다중처리 프로그래밍을 짧게 해주는 효율적인 메서드
         $(this).attr('data-pos' , $(this).offset().top)
@@ -32,7 +34,41 @@ $(document).ready(function(){
 
         })
         
+        if( scrollPos > 0 ){
+            $('#hd').addClass('on')
+        }else{
+            $('#hd').removeClass('on')
+        }
         
     })
+
+
+    $('.culture_item button').on( 'click', function(){
+        clearInterval(myroll); //자동롤링 멈춰라
+        num = $(this).parent().index()
+        myrollingfun (num)
+        
+    })
+    // 1번
+
+    
+    function myrollingfun(x){
+        $('.culture_item').removeClass('active');
+        $('.culture_item button').eq(x).parent().addClass('active');
+    }
+
+    var num = 0;
+    
+    // 2번
+    
+    var myroll = setInterval(function(){
+
+        num++;
+        num %= $('.culture_item button').length;
+        myrollingfun(num);
+
+    }, 3000)
+    
+
 })
 
