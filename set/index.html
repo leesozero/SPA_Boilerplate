@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>setInterval $ clearInterval 기본다루기(if else, callback, arrey)</title>
+    <title>배너프로젝트</title>
+    <link rel="stylesheet" href="css/set.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
 </script>
+<script src="js/banner.js"></script>
 
 </head>
 <body>
@@ -16,34 +18,6 @@
         0
     </div>
     
-    <script>     
-        var _classNm = 'next';
-        var autoTimer = setInterval( function(){
-            _setTimefun($('.timer').html(), _classNm)
-            },1000)
-                
-            $('button').click(function(){
-                
-                    clearInterval(autoTimer);
-                    _classNm = $(this).attr('class');
-                    _setTimefun($('.timer').html(), _classNm);  
-                    
-                    autoTimer = setInterval( function(){
-                    _setTimefun($('.timer').html(), _classNm)
-                    },1000)
-                
-            })
       
-        function _setTimefun(count, dir){ 
-            if( dir == 'next' ) {
-                if(count < 4) count++; else count = 0;    
-            }
-            else { 
-                if(count > 0) count--; else count = 4;
-            }
-
-            $('.timer').html(count);           
-        }        
-    </script>    
 </body>
 </html>
